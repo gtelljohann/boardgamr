@@ -1,0 +1,16 @@
+<!-- <accordion>
+<h1 class="page-header">Games:</h1>
+<game-list-item ng-repeat="game in allGames | orderBy:'name'"></game-list-item>
+</accordion> -->
+<div layout="column" layout-fill>
+<md-toolbar class="md-accent" md-scroll-shrink>
+<div class="md-toolbar-tools">
+	<h1><span>Games</span></h1>
+</div>
+</md-toolbar>
+<md-content class="md-padding">
+<md-list>
+<game-list-item ng-repeat="game in allGames | orderBy:'name'"></game-list-item>
+</md-list>
+</md-content>
+</div>

@@ -1,0 +1,30 @@
+<!-- <md-item>
+<md-item-content> -->
+<md-card>
+<div class="md-tile-content">
+	<md-checkbox ng-model="game.isChecked" aria-label="{{game.name}}">
+	<h3><a ng-href="/game/{{game._id}}">{{game.name}}</a></h3>
+	</md-checkbox>
+	<div collapse="!game.isChecked">
+		<div ng-if="game.mechanics.length">
+			<h5>Mechanics:</h5>
+			<p>
+			<div ng-repeat="mechanic in game.mechanics">
+				<md-checkbox ng-model="mechanic.isChecked" aria-label="{{mechanic.name}}">{{mechanic.name}}</md-checkbox>
+			</div>
+			</p>
+		</div>
+		<div ng-if="game.themes.length">
+			<h5>Type:</h5>
+			<p>
+			<div ng-repeat="theme in game.themes">
+				<md-checkbox ng-model="theme.isChecked" aria-label="{{theme.name}}">{{theme.name}}</md-checkbox>
+			</div>
+			</p>
+		</div>
+	</div>
+</div>
+</md-card>
+<!-- </md-item-content>
+<md-divider ng-if="!$last"></md-divider>
+</md-item> -->
