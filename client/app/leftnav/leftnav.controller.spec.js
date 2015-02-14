@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: AboutCtrl', function () {
+describe('Controller: LeftnavCtrl', function () {
 
   // load the controller's module
   beforeEach(module('boardGamrApp'));
 
-  var AboutCtrl, scope;
+  var LeftnavCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    AboutCtrl = $controller('AboutCtrl', {
+    LeftnavCtrl = $controller('LeftnavCtrl', {
       $scope: scope
     });
   }));

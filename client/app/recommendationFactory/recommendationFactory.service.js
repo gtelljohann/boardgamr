@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
   .factory('recommendationFactory', function() {
 
     function recommend(likes, others, num) {

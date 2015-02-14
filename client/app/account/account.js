@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {

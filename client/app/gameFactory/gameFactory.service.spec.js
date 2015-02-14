@@ -3,7 +3,7 @@
 describe('Service: gameFactory', function () {
 
   // load the service's module
-  beforeEach(module('boardGamePandoraApp'));
+  beforeEach(module('boardGamrApp'));
 
   // instantiate service
   var gameFactory;

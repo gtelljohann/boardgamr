@@ -3,7 +3,7 @@
 describe('Controller: GameCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('boardGamePandoraApp'));
+  beforeEach(module('boardGamrApp'));
 
   var GameCtrl, scope;
 

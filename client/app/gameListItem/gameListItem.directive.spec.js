@@ -3,7 +3,7 @@
 describe('Directive: gameListItem', function () {
 
   // load the directive's module and view
-  beforeEach(module('boardGamePandoraApp'));
+  beforeEach(module('boardGamrApp'));
   beforeEach(module('app/gameListItem/gameListItem.html'));
 
   var element, scope;

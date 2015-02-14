@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
   .controller('MainCtrl', function($scope, $http, $modal, socket, gameFactory, bggApiFactory, recommendationFactory) {
     $scope.awesomeThings = [];
 
