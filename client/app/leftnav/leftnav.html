@@ -1,0 +1,18 @@
+ <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+  <md-toolbar class="md-primary">
+  <h1 class="md-toolbar-tools">Search for some things</h1>
+  </md-toolbar>
+  <md-content class="md-padding">
+  <md-button ng-click="close()" class="md-primary" hide-gt-md>
+  Close Sidenav Left
+  </md-button>
+  <p hide-md show-gt-md>
+  This sidenav is locked open on your device. To go back to the default behavior,
+  narrow your display.
+  </p>
+  <ul>
+    <li ng-repeat='theme in themes'>{{theme.name}}</li>
+  </ul>
+  <ul>
+    <li ng-repeat='mechanic in mechanics'>{{mechanic.name}}</li>
+  </ul>

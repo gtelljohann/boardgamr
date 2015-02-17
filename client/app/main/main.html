@@ -1,22 +1,7 @@
 <div layout="row">
-  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
-  <md-toolbar class="md-primary">
-  <h1 class="md-toolbar-tools">Search for some things</h1>
-  </md-toolbar>
-  <md-content class="md-padding" ng-controller="LeftnavCtrl">
-  <md-button ng-click="close()" class="md-primary" hide-gt-md>
-  Close Sidenav Left
-  </md-button>
-  <p hide-md show-gt-md>
-  This sidenav is locked open on your device. To go back to the default behavior,
-  narrow your display.
-  </p>
-  <ul>
-    <li ng-repeat='theme in themes'>{{theme.name}}</li>
-  </ul>
-  <ul>
-    <li ng-repeat='mechanic in mechanics'>{{mechanic.name}}</li>
-  </ul>
+ 
+ <leftnav></leftnav>
+
   <!-- <p>
   Use the `md-auto-complete` to search for matches from local or remote data sources.
   </p>
@@ -29,11 +14,12 @@
   <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
   </md-autocomplete>
   <p>Current search term: "{{ctrl.searchText}}"</p> -->
+  
   </md-content>
   </md-sidenav>
   <div layout="column">
     <header class="home-page-head">
-      <h1>Welcome to Board Game Pandora!</h1>
+      <h1>Welcome to Board Gamr!</h1>
       <br/>
       <md-button class="md-raised md-accent" ng-click="recommend()">Recommend!</md-button>
       <md-button class="md-raised md-warn" ng-click="reset()">Reset</md-button>

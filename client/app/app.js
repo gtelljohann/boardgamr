@@ -11,9 +11,9 @@ angular.module('boardGamrApp', [
   ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('orange')
-      .accentPalette('blue-grey')
-      .warnPalette('red')
+      .primaryPalette('blue')
+      .accentPalette('teal')
+      .warnPalette('amber')
       .backgroundPalette('grey');
 
     $urlRouterProvider
