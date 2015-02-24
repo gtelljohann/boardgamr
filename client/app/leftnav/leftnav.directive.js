@@ -5,7 +5,6 @@ angular.module('boardGamrApp')
     return {
       templateUrl: 'app/leftnav/leftnav.html',
       restrict: 'EA',
-      link: function (scope, element, attrs) {
-      }
+      controller: 'LeftnavCtrl'
     };
   });

@@ -1,14 +1,25 @@
  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
-  <md-toolbar class="md-primary">
+  <!-- <md-toolbar class="md-primary">
   <h1 class="md-toolbar-tools">Search for some things</h1>
-  </md-toolbar>
+  </md-toolbar> -->
   <md-content class="md-padding">
+  <!-- <p>
+  Use the `md-auto-complete` to search for matches from local or remote data sources.
+  </p>
+  <md-autocomplete
+  md-selected-item="ctrl.selectedItem"
+  md-search-text="ctrl.searchText"
+  md-items="item in ctrl.querySearch(ctrl.searchText)"
+  md-item-text="display"
+  placeholder="What is your favorite US state?">
+  <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+  </md-autocomplete>
+  <p>Current search term: "{{ctrl.searchText}}"</p> -->
   <md-button ng-click="close()" class="md-primary" hide-gt-md>
   Close Sidenav Left
   </md-button>
   <p hide-md show-gt-md>
-  This sidenav is locked open on your device. To go back to the default behavior,
-  narrow your display.
+  
   </p>
   <ul>
     <li ng-repeat='theme in themes'>{{theme.name}}</li>
@@ -16,3 +27,6 @@
   <ul>
     <li ng-repeat='mechanic in mechanics'>{{mechanic.name}}</li>
   </ul>
+
+  </md-content>
+  </md-sidenav>

@@ -1,0 +1,20 @@
+<md-card class="recommendation">
+<h4><a ng-click="openModal(game._id)">{{game.name}}</a> </h4>
+<!-- ({{rec.value}}) -->
+<div ng-if="game.mechanics.length">
+	<h5>Mechanics:</h5>
+	<ul>
+		<li ng-repeat="mechanic in game.mechanics" ng-class="{bold:mechanic.bold, ital:mechanic.ital}">
+			{{mechanic.name}}
+		</li>
+	</ul>
+</div>
+<div ng-if="game.themes.length">
+	<h5>Type:</h5>
+	<ul>
+		<li ng-repeat="theme in game.themes" ng-class="{bold:theme.bold, ital:theme.ital}">
+			{{theme.name}}
+		</li>
+	</ul>
+</div>
+</md-card>

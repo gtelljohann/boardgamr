@@ -23,12 +23,29 @@
   <!-- endinjector -->
   <!-- endbuild -->
 </head>
-<body ng-app="boardGamrApp">
+<body ng-app="boardGamrApp" layout="column">
   <!--[if lt IE 7]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <!-- Add your site or application content here -->
-  <div ng-include="'components/navbar/navbar.html'"></div>
+<!--   <topnav></topnav> -->
+<md-toolbar class="md-default-theme">
+<div class="md-toolbar-tools">
+  <div layout="row" flex class="fill-height">
+    <div class="md-toolbar-item">
+      <a ng-href="/"><span style="display:inline-block;">board-gamr</span></a>
+    </div>
+    <div class="md-toolbar-item">
+      <span style="display:inline-block;">about</span>
+    </div>
+    <span flex></span>
+    <div class="md-toolbar-item">
+      <span style="display:inline-block;">login</span>
+    </div>
+  </div>
+</div>
+</md-toolbar>
+  <!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
   <div ui-view=""></div>
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
   <script>
@@ -83,10 +100,12 @@
   <script src="app/main/main.controller.js"></script>
   <script src="app/main/main.js"></script>
   <script src="app/mechanicFactory/mechanicFactory.service.js"></script>
+  <script src="app/recommendation/recommendation.directive.js"></script>
   <script src="app/recommendationFactory/recommendationFactory.service.js"></script>
   <script src="app/restyle/restyle.controller.js"></script>
   <script src="app/restyle/restyle.js"></script>
   <script src="app/themeFactory/themeFactory.service.js"></script>
+  <script src="app/topnav/topnav.directive.js"></script>
   <script src="components/auth/auth.service.js"></script>
   <script src="components/auth/user.service.js"></script>
   <script src="components/modal/modal.service.js"></script>
