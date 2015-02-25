@@ -1,13 +1,7 @@
 <md-card layout="row">
-<span flex>
-<md-icon ng-class="game.isChecked ? 'star' : 'star-outline'" 
-ng-click="togglePreference(game)">
-</md-icon>
-</span>
 <img src="{{game.imageURL}}"/>
-<span flex></span>
 <div>
-	<h2>{{game.name}}</h2>
+	<h3>{{game.name}}</h3>
 	<h5>Mechanics:</h5>
 	<ul>
 		<li ng-repeat="mechanic in game.mechanics">
@@ -21,5 +15,4 @@ ng-click="togglePreference(game)">
 		</li>
 	</ul>
 </div>
-<span flex></span>
 </md-card>
