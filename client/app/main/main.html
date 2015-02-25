@@ -1,4 +1,32 @@
-<div layout="row">
+<div layout="column">
+  <topnav></topnav>
+  <md-content class="md-padding container">
+  <header>
+    <h1>Find the games you love</h1>
+    <md-autocomplete md-items="game in gameSearch(searchText)  | orderBy:'name'"
+    md-item-text="game.name"
+    md-selected-item="selectedItem"
+    md-search-text="searchText"
+    placeholder="Search for a board game here">
+    <span md-highlight-text="searchText">{{game.name}}</span>
+    </md-autocomplete>
+    <p>Or <a ng-href="/browse">browse</a></p>
+  </header>
+  <game-summary ng-repeat="game in gameSearch(searchText) | orderBy:'name'">
+  </game-summary>
+  <p ng-if="searchText.length">Didn't find what you were looking for? <a ng-href="/browse">Browse</a> our full curated list of games!</p>
+  </md-content>
+  <md-button class="md-fab md-accent recommend-button" aria-label="Get my recommendations">
+  <md-tooltip>
+  Get my recommendations!
+  </md-tooltip>
+  <md-icon md-svg-src="bower_components/material-design-icons/content/svg/design/ic_send_24px.svg"></md-icon>
+  </md-button>
+</div>
+
+
+
+<!-- <div layout="row">
  
  <leftnav></leftnav>
 
@@ -15,7 +43,7 @@
     </div>
     </md-content>
     <game-list></game-list>
-  </div>
+  </div> -->
  
   <!-- <footer class="footer">
     <div class="container">

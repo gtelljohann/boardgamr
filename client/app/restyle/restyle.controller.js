@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('boardGamrApp')
-  .controller('RestyleCtrl', function ($scope) {
-    $scope.message = 'Hello';
-  });
+	.controller('RestyleCtrl', function($scope, $filter, gameFactory) {
+		$scope.allGames = gameFactory.query();
+
+	
+	});

@@ -2,12 +2,6 @@
 
 angular.module('boardGamrApp')
   .controller('MainCtrl', function($scope, $http, $modal, socket, gameFactory, bggApiFactory, recommendationFactory) {
-    $scope.awesomeThings = [];
-
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
-    });
 
     $scope.allGames = gameFactory.query(function() {
       $scope.allGames.forEach(function(game) {
@@ -16,6 +10,23 @@ angular.module('boardGamrApp')
       })
     });
     socket.syncUpdates('game', $scope.allGames);
+
+    $scope.togglePreference = function(game) {
+      game.isChecked = !game.isChecked;
+    };
+
+    $scope.gameSearch = function(text) {
+      var results = text ? $scope.allGames.filter(createFilterFor(text)) : [];
+      results.sort
+      return results;
+    }
+
+    function createFilterFor(query) {
+      var lowercaseQuery = query.toLowerCase();
+      return function filterFn(game) {
+        return (game.name.toLowerCase().indexOf(lowercaseQuery) >= 0);
+      };
+    }
 
     $scope.recommend = function() {
       var likes = [];
@@ -58,9 +69,10 @@ angular.module('boardGamrApp')
     }
 
     $scope.openModal = function(gameId) {
-      console.log('hi')
       $scope.gctrl = {};
-      $scope.gctrl.game = gameFactory.get({id:gameId});
+      $scope.gctrl.game = gameFactory.get({
+        id: gameId
+      });
       $scope.currentModal = $modal.open({
         templateUrl: 'app/game/game.html',
         scope: $scope
@@ -68,21 +80,4 @@ angular.module('boardGamrApp')
 
     };
 
-    $scope.addThing = function() {
-      if ($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', {
-        name: $scope.newThing
-      });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
-    });
   });
