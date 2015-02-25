@@ -1,0 +1,41 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-md')">
+<md-content class="md-padding">
+
+<h5>Filter By:</h5>
+<md-radio-group ng-model="anyAllFilter">
+<md-radio-button value="any">Any Selected</md-radio-button>
+<md-radio-button value="all">All Selected</md-radio-button>
+</md-radio-group> 
+
+<h5>Themes:</h5>
+<md-button ng-click="toggleShowThemes()">
+<md-icon ng-class="showThemes ? 'icon-expanded' : 'icon-collapsed'"></md-icon>
+</md-button>
+<md-button ng-click="resetThemes()">
+<md-tooltip>Clear Selected Themes</md-tooltip>
+<md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
+</md-button>
+<div ng-show="showThemes">
+<md-checkbox ng-repeat="theme in themes | orderBy:'name'"
+ng-model="theme.isChecked">
+{{theme.name}}
+</md-checkbox>
+</div>
+
+<h5>Mechanics:</h5>
+<md-button ng-click="toggleShowMechanics()">
+<md-icon ng-class="showMechanics ? 'icon-expanded' : 'icon-collapsed'"></md-icon>
+</md-button>
+<md-button ng-click="resetMechanics()">
+<md-tooltip>Clear Selected Mechanics</md-tooltip>
+<md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
+</md-button>
+<div ng-show="showMechanics">
+<md-checkbox ng-repeat="mechanic in mechanics | orderBy:'name'"
+ng-model="mechanic.isChecked">
+{{mechanic.name}}
+</md-checkbox>
+</div>
+
+</md-content>
+</md-sidenav>
