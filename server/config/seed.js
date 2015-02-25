@@ -151,6 +151,9 @@ var bluffing = new Mechanic({
 var pressYourLuck = new Mechanic({
   name: 'Press Your Luck'
 });
+var deduction = new Mechanic({
+  name: 'Deduction'
+});
 
 
 Mechanic.find({}).remove(function() {
@@ -187,6 +190,7 @@ Mechanic.find({}).remove(function() {
   speedBased.save();
   bluffing.save();
   pressYourLuck.save();
+  deduction.save();
 })
 
 Game.find({}).remove(function() {
@@ -270,7 +274,7 @@ Game.find({}).remove(function() {
     name: 'Clue',
     imageURL: 'http://cf.geekdo-images.com/images/pic884234.jpg',
     bggId: '1294',
-    mechanics: [gridMovement._id, handManagement._id, memory._id, paperAndPencil._id, rollAndMove._id]
+    mechanics: [gridMovement._id, handManagement._id, memory._id, paperAndPencil._id, rollAndMove._id, deduction._id]
   }, {
     name: 'Fluxx',
     imageURL: 'http://cf.geekdo-images.com/images/pic414362.jpg',
@@ -299,7 +303,7 @@ Game.find({}).remove(function() {
     name: 'One Night Ultimate Werewolf',
     imageURL: 'http://cf.geekdo-images.com/images/pic1809823.jpg',
     bggId: '147949',
-    mechanics: [rolePlaying._id, variablePlayerPowers._id, voting._id, bluffing._id],
+    mechanics: [rolePlaying._id, variablePlayerPowers._id, voting._id, bluffing._id, deduction._id],
     themes: [partyGame._id, casual._id, cardGame._id]
   }, {
     name: 'Pandemic',
@@ -329,7 +333,7 @@ Game.find({}).remove(function() {
     name: 'The Resistance',
     imageURL: 'http://cf.geekdo-images.com/images/pic1392135.png',
     bggId: '41114',
-    mechanics: [partnerships._id, simultaneousAction._id, voting._id, bluffing._id],
+    mechanics: [partnerships._id, simultaneousAction._id, voting._id, bluffing._id, deduction._id],
     themes: [partyGame._id, cardGame._id]
   }, {
     name: 'Risk',

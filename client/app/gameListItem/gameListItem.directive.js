@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
 	.directive('gameListItem', function() {
 		return {
 			templateUrl: 'app/gameListItem/gameListItem.html',

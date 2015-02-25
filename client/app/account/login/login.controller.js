@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};

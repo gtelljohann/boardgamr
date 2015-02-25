@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp', [
+angular.module('boardGamrApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
@@ -11,9 +11,9 @@ angular.module('boardGamePandoraApp', [
   ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $mdThemingProvider.theme('default')
-      .primaryPalette('orange')
-      .accentPalette('blue-grey')
-      .warnPalette('red')
+      .primaryPalette('blue')
+      .accentPalette('teal')
+      .warnPalette('amber')
       .backgroundPalette('grey');
 
     $urlRouterProvider

@@ -1,54 +1,50 @@
-<div class="container">
-  <header class="home-page-head">
-    <h1>Welcome to Board Gamr!</h1>
-    <br/>
-    <md-button class="md-raised md-accent" ng-click="recommend()">Recommend!</md-button>
-    <md-button class="md-raised md-warn" ng-click="reset()">Reset</md-button>
+<div layout="column">
+  <topnav></topnav>
+  <md-content class="md-padding container">
+  <header>
+    <h1>Find the games you love</h1>
+    <md-autocomplete md-items="game in gameSearch(searchText)  | orderBy:'name'"
+    md-item-text="game.name"
+    md-selected-item="selectedItem"
+    md-search-text="searchText"
+    placeholder="Search for a board game here">
+    <span md-highlight-text="searchText">{{game.name}}</span>
+    </md-autocomplete>
+    <p>Or <a ng-href="/browse">browse</a></p>
   </header>
-  <md-content class-"md-padding">
-  <div layout="row">
-    <md-card class="recommendation" ng-repeat="rec in recommendations" flex ng-init="game=rec.game">
-    <h4><a ng-click="openModal(game._id)">{{game.name}}</a> </h4>
-    <!-- ({{rec.value}}) -->
-    <div ng-if="game.mechanics.length">
-      <h5>Mechanics:</h5>
-      <ul>
-        <li ng-repeat="mechanic in game.mechanics" ng-class="{bold:mechanic.bold, ital:mechanic.ital}">
-          {{mechanic.name}}
-        </li>
-      </ul>
-    </div>
-    <div ng-if="game.themes.length">
-      <h5>Type:</h5>
-      <ul>
-        <li ng-repeat="theme in game.themes" ng-class="{bold:theme.bold, ital:theme.ital}">
-          {{theme.name}}
-        </li>
-      </ul>
-    </div>
-    </md-card>
-  </div>
+  <game-summary ng-repeat="game in gameSearch(searchText) | orderBy:'name'">
+  </game-summary>
+  <p ng-if="searchText.length">Didn't find what you were looking for? <a ng-href="/browse">Browse</a> our full curated list of games!</p>
   </md-content>
-  <game-list></game-list>
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h1 class="page-header">Features:</h1>
-        <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-          <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-        </ul>
-      </div>
+  <md-button class="md-fab md-accent recommend-button" aria-label="Get my recommendations">
+  <md-tooltip>
+  Get my recommendations!
+  </md-tooltip>
+  <md-icon md-svg-src="bower_components/material-design-icons/content/svg/design/ic_send_24px.svg"></md-icon>
+  </md-button>
+</div>
+
+
+
+<!-- <div layout="row">
+ 
+ <leftnav></leftnav>
+
+  <div layout="column" flex>
+    <header class="md-primary">
+      <h1>Welcome to Board Gamr!</h1>
+      <br/>
+      <md-button class="md-raised md-accent" ng-click="recommend()">Recommend!</md-button>
+      <md-button class="md-raised md-warn" ng-click="reset()">Reset</md-button>
+    </header>
+    <md-content class-"md-padding">
+    <div layout="row">
+      <recommendation ng-repeat="rec in recommendations" flex ng-init="game = rec.game"></recommendation>
     </div>
-    <form class="thing-form">
-      <label>Syncs in realtime across clients</label>
-      <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-      <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-      </p>
-    </form>
-  </div>-->
+    </md-content>
+    <game-list></game-list>
+  </div> -->
+ 
   <!-- <footer class="footer">
     <div class="container">
       <p>Angular Fullstack v2.0.13 |

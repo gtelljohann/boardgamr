@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('boardGamePandoraApp')
+angular.module('boardGamrApp')
   .controller('AboutCtrl', function ($scope) {
     $scope.message = 'Hello';
   });
