@@ -2,7 +2,7 @@
 <topnav></topnav>
 <div layout="row">
 <browse-leftnav></browse-leftnav>
-<md-content layout="row" class="md-padding" flex layout-wrap>
+<md-content layout="row" class="md-padding browse-content" flex layout-wrap>
 <browse-game-summary ng-repeat="game in filterGames() | orderBy:'name'">
 </browse-game-summary>
 <p ng-if="!filterGames().length">No games match all of those requirements! <md-button class="md-primary" ng-click="resetThemes();resetMechanics();">Start over?</md-button></p>
