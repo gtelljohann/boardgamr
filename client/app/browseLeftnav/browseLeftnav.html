@@ -15,7 +15,7 @@
 <md-tooltip>Clear Selected Themes</md-tooltip>
 <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
 </md-button>
-<div ng-show="showThemes">
+<div ng-show="showThemes" class="slide-hide">
 <md-checkbox ng-repeat="theme in themes | orderBy:'name'"
 ng-model="theme.isChecked">
 {{theme.name}}
@@ -30,7 +30,7 @@ ng-model="theme.isChecked">
 <md-tooltip>Clear Selected Mechanics</md-tooltip>
 <md-icon md-svg-src="bower_components/material-design-icons/navigation/svg/design/ic_refresh_24px.svg"></md-icon>
 </md-button>
-<div ng-show="showMechanics">
+<div ng-show="showMechanics" class="slide-hide">
 <md-checkbox ng-repeat="mechanic in mechanics | orderBy:'name'"
 ng-model="mechanic.isChecked">
 {{mechanic.name}}
