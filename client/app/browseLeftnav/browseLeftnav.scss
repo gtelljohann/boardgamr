@@ -5,3 +5,13 @@
 .icon-expanded {
 	content:url(../bower_components/material-design-icons/navigation/svg/design/ic_expand_more_24px.svg);
 }
+
+.slide-hide.ng-hide-add, .slide-hide.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.slide-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+}

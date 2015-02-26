@@ -48,7 +48,8 @@ angular.module('boardGamrApp')
       });
       $scope.recommendations = recommendationFactory(likes, others, 3);
       $scope.showRecs = true;
-    }
+      window.scrollTo(0,0);
+    };
 
     $scope.reset = function() {
       $scope.allGames.forEach(function(game) {
@@ -66,7 +67,7 @@ angular.module('boardGamrApp')
       });
       $scope.recommendations = [];
       $scope.showRecs = false;
-    }
+    };
 
     $scope.openModal = function(gameId) {
       $scope.gctrl = {};

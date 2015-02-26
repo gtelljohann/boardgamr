@@ -1,6 +1,6 @@
 <div layout="column">
   <topnav></topnav>
-  <md-content class="md-padding container">
+  <md-content ng-hide="showRecs" class="md-padding container">
   <header>
     <h1>Find the games you love</h1>
     <md-autocomplete md-items="game in gameSearch(searchText)  | orderBy:'name'"
@@ -16,20 +16,27 @@
   </game-summary>
   <p ng-if="searchText.length">Didn't find what you were looking for? <a ng-href="/browse">Browse</a> our full curated list of games!</p>
   </md-content>
-  <md-button class="md-fab md-accent recommend-button" aria-label="Get my recommendations">
+
+  <md-content ng-show="showRecs" class="md-padding">
+  <header>
+    <h1>How about trying these new games?</h1>
+  <div layout="row">
+    <recommendation ng-repeat="rec in recommendations" flex ng-init="game=rec.game"></recommendation>
+  </div>
+  <p>Didn't see one that interests you? <md-button ng-click="showRecs=false">Edit</md-button> your selections or <md-button ng-click="reset()">start over</md-button></p>
+</header>
+  </md-content>
+  <md-button class="md-fab md-accent recommend-button" aria-label="Get my recommendations"
+  ng-click="recommend()">
   <md-tooltip>
   Get my recommendations!
   </md-tooltip>
   <md-icon md-svg-src="assets/images/noun_44674_cc.svg"></md-icon>
   </md-button>
 </div>
-
-
-
 <!-- <div layout="row">
- 
- <leftnav></leftnav>
-
+  
+  <leftnav></leftnav>
   <div layout="column" flex>
     <header class="md-primary">
       <h1>Welcome to Board Gamr!</h1>
@@ -44,7 +51,7 @@
     </md-content>
     <game-list></game-list>
   </div> -->
- 
+  
   <!-- <footer class="footer">
     <div class="container">
       <p>Angular Fullstack v2.0.13 |
